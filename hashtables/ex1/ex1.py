@@ -13,6 +13,7 @@ def get_indices_of_item_weights(weights, length, limit):
     YOUR CODE HERE
     """
 
+    #return (larger_number, smaller_number)
     return None
 
 
@@ -21,3 +22,9 @@ def print_answer(answer):
         print(str(answer[0] + " " + answer[1]))
     else:
         print("None")
+
+
+weights = [2, 3, 7, 11, 15, 17, 20, 22, 23, 31]
+print(get_indices_of_item_weights(weights, 10, 15))
+
+
