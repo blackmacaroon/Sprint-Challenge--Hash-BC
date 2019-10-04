@@ -11,28 +11,20 @@ def get_indices_of_item_weights(weights, length, limit):
     #iterate through weights in array
     #enumerate counts from 0 and loops through the array
     for index, weight in enumerate(weights):
-        pair = hash_table_retrieve(ht, limit - weight)
-        if pair is None:
-            hash_table_insert(ht, weight, index)
-        else:
-            if index > weight:
-                return (index, weight)
-            return (weight, index)
-        print(ht.storage)
-        
-    # add array to hashtable with index
-    # for i in range(0, len(weights)):
-    #     hash_table_insert(ht, weights[i], i)
-    # # iterate through ht
-    # for i in range(length):
-    #     #subtract the weights from the limit
-    #     j = hash_table_retrieve(ht, limit-weights[i])
-    #     if j is not None:
-    #         #return (larger_number, smaller_number)
-    #         if i > j:
-    #             return (i, j)
-    #         else:
-    #             return (j, i)
+        #add all weights to hashtable
+        hash_table_insert(ht, weight, index)
+    #loop through again, find the pairs that equal the limit
+    for index, weight in enumerate(weights):
+        #subtract the weights from the limit
+        pair = limit - weight
+        #if we find the pair for limit-weight in hashtable
+        key_index = hash_table_retrieve(ht,pair)
+        if key_index is not None:
+            #return (larger_number_index, smaller_number_index)
+            if key_index > index:
+                return (key_index, index)
+            else:
+                return (index, key_index)
     return None
 
 
@@ -41,5 +33,8 @@ def print_answer(answer):
         print(str(answer[0] + " " + answer[1]))
     else:
         print("None")
+
+# weights_4 = [12, 6, 7, 14, 19, 3, 0, 25, 40]
+# print(get_indices_of_item_weights(weights_4, 9, 40))
 
 
