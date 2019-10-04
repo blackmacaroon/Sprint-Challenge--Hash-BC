@@ -1,36 +1,32 @@
 # Sprint Challenge: Hash Tables and Blockchain
+This Sprint, we learned how hash tables combine two data structures to get the best of both worlds and were introduced into the fascinating world of blockchains.
 
-This challenge allows you to practice the concepts and techniques learned over the past week and apply them in a concrete project. This Sprint, we learned how hash tables combine two data structures to get the best of both worlds and were introduced into the fascinating world of blockchains. In your challenge this week, you will demonstrate proficiency by solving algorithms in Python using hash tables and add another key feature to your blockchain.
-
-## Instructions
-
-**Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
-
-This is an individual assessment. All work must be your own. Your challenge score is a measure of your ability to work independently using the material covered through this sprint. You need to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
-
-You are not allowed to collaborate during the Sprint Challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your PM and Instructor in your cohort help channel on Slack. Your work reflects your proficiency in Python and your command of the concepts and techniques in related to hash tables and blockchains.
-
-You have three hours to complete this challenge. Plan your time accordingly.
-
-## Commits
-
-Commit your code regularly and meaningfully. This helps both you (in case you ever need to return to old code for any number of reasons and your project manager.
+demonstrate proficiency by solving algorithms in Python using hash tables and add another key feature to your blockchain.
 
 ## Description
 
 This sprint challenge is divided up into three parts:  Hash tables coding, blockchain coding, and a short interview covering parts of hash tables and blockchain.
 
-## Interview Questions
+# # # # # # # # # # # # # # # # # # # Interview Questions  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
-During your challenge, you will be pulled aside by a PM for a 5 minute interview. During this interview, you will be expected to answer the following two topics:
-
-Explain in detail the workings of a dynamic array:
-* What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
+# Explain in detail the workings of a dynamic array:
+* What is the runtime complexity to access an array, 
+O(1)
+* add or remove from the front
+O(n)  - we have to shift every single item to a new index in the array one by one
+* and add or remove from the back?
+O(1)
 * What is the worse case scenario if you try to extend the storage size of a dynamic array?
+O(n)
+We try to double it, there's not enough contiguous free space, so we'd have to find a empty space in memory large enough, then move the old array data one by one into the new, larger array
 
-Explain how blockchain networks remain in consensus:
+# Explain how blockchain networks remain in consensus:
 * What does a node do if it gets a message from another in the network with a new block?
+Sent to everyone on the network, each node verifies the new block to make sure it hasn't been tampered with. If it's approved, it's added to their blockchain (this is called concensus)
 * Why can't someone cheat by changing a transaction from an earlier block to give themselves coins?
+The falsified block will have a different hash than before, therefore, in the subsequent blocks, the fingerprint of previous-block would not match. Someone would have to change every block onward in the distributed ledger. To add complications, We use a proof-of-work mechanism to slow down the creation of blocks (for example, bitcoin takes 10 minutes for 1 block) and with the use of distribution among a peer-to-peer network, a nefarious person would have to get approval from/take control of over 50% of the p2p network
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 ## Project Set Up
 
