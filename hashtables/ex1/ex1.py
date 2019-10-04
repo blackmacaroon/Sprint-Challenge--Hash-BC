@@ -16,7 +16,7 @@ def get_indices_of_item_weights(weights, length, limit):
         #subtract the weights from the limit
         pair = limit - weight
         #if we find the pair for limit-weight in hashtable
-        key_index = hash_table_retrieve(ht,pair)
+        key_index = hash_table_retrieve(ht, pair)
         if key_index is not None:
             #return (larger_number_index, smaller_number_index)
             if key_index > index:
