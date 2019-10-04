@@ -22,17 +22,16 @@ def reconstruct_trip(tickets, length):
         hash_table_insert(ht, s, d)
     # take_off = if source = None
     take_off = hash_table_retrieve(ht, "NONE")
-    print(take_off)
+    # print(take_off)
     # find first ticket, add to route
     route[0] = take_off
 
-    
-     
-    
-     
-    """
-    YOUR CODE HERE
-    """
+    # iterate through ht
+    for i in range(1, length):
+        #hashtable shuffle
+        final_approach = hash_table_retrieve(ht, take_off)
+        route[i] = final_approach
+        take_off = final_approach 
 
     return route
 
